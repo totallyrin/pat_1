@@ -1,13 +1,7 @@
-'use strict';
+var connect = require('connect');
+var serveStatic = require('serve-static');
+var app = connect();
 
-const path = require('path');
-const express = require("express");
-const app = require('express')();
+app.use(serveStatic('../angularjs'));
 
-const port = process.env.PORT || 8080;
-
-app.use(express.static(path.join('src', 'home.html')));
-
-app.listen(port, () => {
-    console.log(`Listening on http://localhost:${port}/`);
-});
+app.listen(5000);
