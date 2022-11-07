@@ -1,7 +1,5 @@
-var connect = require('connect');
-var serveStatic = require('serve-static');
-var app = connect();
+var connect = require("connect");
 
-app.use(serveStatic('../angularjs'));
+var app = connect.createServer().use(connect.static(__dirname + '/src'));
 
-app.listen(5000);
+app.listen(8180);
