@@ -1,5 +1,6 @@
 var connect = require("connect");
-
-var app = connect.createServer().use(connect.static(__dirname + '/src'));
-
-app.listen(8180);
+var app = connect();
+app.use(function(req,res){
+    res.end("Hello");
+});
+app.listen(3000);
